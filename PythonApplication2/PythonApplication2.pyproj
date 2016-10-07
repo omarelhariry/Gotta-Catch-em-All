@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6cb9f7e8-8ad8-40dd-a94e-0af43ad99fb9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>maze.py</StartupFile>
+    <StartupFile>GCA.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,9 @@
     <Compile Include="cell.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="class1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GCA.py">
       <SubType>Code</SubType>
     </Compile>
@@ -39,6 +42,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="state.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PriorityW.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

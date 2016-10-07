@@ -5,8 +5,8 @@ class maze(object):
     def randomize(self):
         self.rows = random.randint(1,100);
         self.columns = random.randint(1,100);
-        self.currentAgentPosition = random.randint(0,rows-1), random.randint(0,columns-1);
-        self.endPosition = random.randint(0,rows-1), random.randint(0,columns-1);
+        self.currentAgentPosition = random.randint(0,self.rows-1), random.randint(0,self.columns-1);
+        self.endPosition = random.randint(0,self.rows-1), random.randint(0,self.columns-1);
         self.eggsKilometers = random.randint(1,100);         
         self.map = [[0 for x in range(self.columns)] for y in range(self.rows)] ;
         self.pokemons = 0;
