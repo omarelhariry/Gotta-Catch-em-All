@@ -1,14 +1,14 @@
-from Queue import PriorityQueue
+import queue;
 
-class PriorityW(PriorityQueue):
+class PriorityW(queue.PriorityQueue):
     def __init__(self):
-        PriorityQueue.__init__(self)
+        queue.PriorityQueue.__init__(self)
         self.counter = 0
         self.lower = 0
         self.upper = 0
 
     def put(self, item, priority):
-        PriorityQueue.put(self, (priority, self.counter, item))
+        queue.PriorityQueue.put(self, (priority, self.counter, item))
         self.counter += 1
         if priority > self.upper :
             self.upper = priority;
@@ -17,6 +17,6 @@ class PriorityW(PriorityQueue):
         
 
     def get(self, *args, **kwargs):
-        _, _, item = PriorityQueue.get(self, *args, **kwargs)
+        _, _, item = queue.PriorityQueue.get(self, *args, **kwargs)
         return item
 
