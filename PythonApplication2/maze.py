@@ -3,15 +3,20 @@ from cell import cell;
 class maze(object):
 
     def randomize(self):
-        self.rows = random.randint(1,10);
-        self.columns = random.randint(1,10);
+        self.rows = random.randint(1,100);
+        self.columns = random.randint(1,100);
+        self.currentAgentPosition = random.randint(0,rows-1), random.randint(0,columns-1);
+        self.endPosition = random.randint(0,rows-1), random.randint(0,columns-1);
+        self.eggsKilometers = random.randint(1,100);         
         self.map = [[0 for x in range(self.columns)] for y in range(self.rows)] ;
+        self.pokemons = 0;
         for row in range(len(self.map)):
             for column in range(len(self.map[row])):
                 self.map[row][column] = cell(1,1,1,1);
+                if(self.map[row][column].hasPokemon()):
+                    self.pokemons +=1;
         
         currentCell = random.randint(0,self.rows-1), random.randint(0,self.columns - 1);
-        #print(self.map[9][8].getCell());
         self.map[currentCell[0]][currentCell[1]].visited = True;
         unvisitedCells = self.columns * self.rows - 1;
         cellsStack = [];
@@ -35,7 +40,6 @@ class maze(object):
                     self.map[currentCell[0]][currentCell[1]].removeWall(1);
                 self.map[currentCell[0]][currentCell[1]].visited = True;
                 unvisitedCells -= 1;
-                print(str(unvisitedCells));
             elif cellsStack:
                 currentCell = cellsStack.pop();
 
