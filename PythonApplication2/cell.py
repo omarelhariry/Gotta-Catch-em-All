@@ -13,6 +13,8 @@ class cell(object):
        self.pokemon = random.randint(0,1); 
        self.visited = False;  
 
+    def hasPokemon(self):
+        return self.pokemon == 1;
     def removeWall(self, wallNumber): # 0 --> left 1 --> up 2 --> right 3 --> down
         self.surroundings[wallNumber] = 0;
 

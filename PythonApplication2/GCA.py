@@ -55,7 +55,7 @@ class GCA(searchProblem.searchProblem):
             y = n.state.y;
             cell2 = m[x][y];
             pokemonsRemaining = n.pokemonsRemaining - cell2.pokemon;
-            print("currently at "+`x`+" and "+`y`);
+            print("currently at "+str(x)+" and "+str(y));
             c = c + 1;
             # check if goal reached
             #if goalTest(m, x, y, pokemonsRemaining) :
@@ -73,7 +73,7 @@ class GCA(searchProblem.searchProblem):
                 cost = n.cost + 1;
                 n1 = searchNode(s, parent, operator, depth, cost, pokemonsRemaining);
                 q.put(n1);
-                print("0: "+`n1.depth`);
+                print("0: "+str(n1.depth));
 
             if cell2.surroundings[1] == 1 :
                 s = state(x, y+1);
@@ -83,7 +83,7 @@ class GCA(searchProblem.searchProblem):
                 cost = n.cost + 1;
                 n1 = searchNode(s, parent, operator, depth, cost, pokemonsRemaining);
                 q.put(n1);
-                print("1: "+`n1.depth`);
+                print("1: "+str(n1.depth));
 
             if cell2.surroundings[2] == 1 :
                 s = state(x+1, y);
@@ -93,7 +93,7 @@ class GCA(searchProblem.searchProblem):
                 cost = n.cost + 1;
                 n1 = searchNode(s, parent, operator, depth, cost, pokemonsRemaining);
                 q.put(n1);
-                print("2: "+`n1.depth`);
+                print("2: "+str(n1.depth));
 
             if cell2.surroundings[3] == 1 :
                 s = state(x, y-1);
@@ -103,7 +103,7 @@ class GCA(searchProblem.searchProblem):
                 cost = n.cost + 1;
                 n1 = searchNode(s, parent, operator, depth, cost, pokemonsRemaining);
                 q.put(n1);
-                print("3: "+`n1.depth`);
+                print("3: "+str(n1.depth));
             
             while q.qsize() != 0 :
                 n1 = w.get();
