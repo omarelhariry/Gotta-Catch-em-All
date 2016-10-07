@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6cb9f7e8-8ad8-40dd-a94e-0af43ad99fb9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>GCA.py</StartupFile>
+    <StartupFile>maze.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
