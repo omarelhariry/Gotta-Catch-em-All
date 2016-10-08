@@ -44,9 +44,6 @@ class maze(object):
                 currentCell = cellsStack.pop();
 
 
-
-
-
                     
 
     def getUnVisitedNeighbors(self, i, j):
@@ -71,6 +68,9 @@ class maze(object):
     def constant(self):
         self.columns = 5;
         self.rows = 5;
+        self.currentAgentPosition = 0, 0;
+        self.endPosition = 4, 4;
+        self.eggsKilometers = 10;    
         self.map = [[0 for x in range(self.rows)] for y in range(self.columns)] ;
         self.map[0][0] =  cell(1,1,0,0);
         self.map[0][1] =  cell(0,1,1,0);
@@ -101,7 +101,11 @@ class maze(object):
         self.map[4][2] =  cell(1,1,0,1);
         self.map[4][3] =  cell(0,0,0,1);
         self.map[4][4] =  cell(0,0,1,1);
-
+        self.pokemons = 0;
+        for row in range(len(self.map)):
+            for column in range(len(self.map[row])):
+                if(self.map[row][column].hasPokemon()):
+                    self.pokemons +=1;
 
 
                    
