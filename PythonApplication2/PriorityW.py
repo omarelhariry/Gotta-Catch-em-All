@@ -1,5 +1,4 @@
-#from Queue import PriorityQueue
-import queue
+import queue;
 
 class PriorityW(queue.PriorityQueue):
     def __init__(self):
