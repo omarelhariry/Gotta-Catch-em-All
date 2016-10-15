@@ -3,11 +3,12 @@ from cell import cell;
 class maze(object):
 
     def randomize(self):
-        self.rows = random.randint(1,100);
-        self.columns = random.randint(1,100);
+        self.rows =  6;
+        self.columns = 5;
         self.currentAgentPosition = random.randint(0,self.rows-1), random.randint(0,self.columns-1);
         self.endPosition = random.randint(0,self.rows-1), random.randint(0,self.columns-1);
-        self.eggsKilometers = random.randint(1,100);         
+        print(str(self.endPosition));
+        self.eggsKilometers =random.randint(1,10);         
         self.map = [[0 for x in range(self.columns)] for y in range(self.rows)] ;
         self.pokemons = 0;
         for row in range(len(self.map)):
@@ -15,7 +16,7 @@ class maze(object):
                 self.map[row][column] = cell(1,1,1,1);
                 if(self.map[row][column].hasPokemon()):
                     self.pokemons +=1;
-        
+        print(self.pokemons);
         currentCell = random.randint(0,self.rows-1), random.randint(0,self.columns - 1);
         self.map[currentCell[0]][currentCell[1]].visited = True;
         unvisitedCells = self.columns * self.rows - 1;
@@ -121,13 +122,20 @@ class maze(object):
 
 
 
-x = maze();
+#x = maze();
 #x = cell(1,0,1,0);
 #print(x.getCell());
-x.randomize();
+#x.randomize();
 #x.map[0][0].removeWall(0);
 #print(x.map[88][98].getCell());
-x.printMaze();
+#x.printMaze();
 #print(x.map[8][9].getCell());
-
+v = [str(1)+","+str(2), str(11)+","+str(7), str(3)+","+str(4)] ;
+x = 7;
+y = 4;
+v.append(str(x)+","+str(y));
+if True and not str(x)+","+str(y) in v:
+    print("deosnt exist");
+else:
+    print("exists");
 

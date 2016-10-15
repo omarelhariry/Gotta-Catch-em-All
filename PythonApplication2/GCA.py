@@ -24,7 +24,8 @@ class GCA(searchProblem.searchProblem):
         #m = [[0 for x in range(w)] for y in range(h)];
         from maze import maze;
         m = maze();
-        m.constant();
+        m.randomize();
+        m.printMaze();
         i = m.currentAgentPosition[0];
         j = m.currentAgentPosition[1];
         from cell import cell
@@ -58,16 +59,19 @@ class GCA(searchProblem.searchProblem):
             cell2 = m.map[x][y];
             #if n.state.seen[str(x)+","+str(y)] == True :
             #    continue;
-            if cell2.pokemon == 1 and not str(x)+","+str(y) in n.state.seen :
+            if cell2.hasPokemon() and not str(x)+","+str(y) in n.state.seen :
                 pokemonsRemaining = n.pokemonsRemaining - 1;
                 n.state.seen.append(str(x)+","+str(y));
+            else:
+                 pokemonsRemaining = n.pokemonsRemaining;
             #n.state.seen[str(x)+","+str(y)] = True;
             print("currently at "+str(x)+" and "+str(y));
             c = c + 1;
             # check if goal reached
             #if goalTest(m, x, y, pokemonsRemaining) :
             #if pokemonsRemaining == 0 and x == endX and y == endY and n.cost >= km :
-            if x == endX and y == endY and n.cost >= km :
+            print("pokemonsremaininggca: "+ str(pokemonsRemaining))
+            if x == endX and y == endY and n.cost >= km and pokemonsRemaining == 0 :
                 print("goal");
                 goal = n;
                 break;
